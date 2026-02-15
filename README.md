@@ -7,7 +7,7 @@ A simple social media application built with React and Vite. Users can create po
 - Create new posts with text and images
 - View a feed of posts
 - Like posts
-- Responsive design with Tailwind CSS
+- Styling with Tailwind CSS
 
 ## Getting Started
 
