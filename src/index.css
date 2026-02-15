@@ -1,0 +1,12 @@
+@import "tailwindcss";
+*{
+    scrollbar-width: none;
+}
+
+.active{
+    border-bottom:3px solid #2563eb;
+} 
+
+.liked{
+    color: #175df4;
+}
