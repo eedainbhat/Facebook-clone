@@ -3,7 +3,6 @@ import Main from "./Main";
 import CreatePost from "./CreatePost";
 import { MyContext } from "../store/Store";
 import { useContext } from "react";
-import SkeletonPost from "./Loader";
 
 const App = () => {
   const { isCreating } = useContext(MyContext);

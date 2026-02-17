@@ -9,7 +9,7 @@ const AddComment = ({ id, userName }) => {
   const handleOnComment = () => {
     let commentInputVal = commentInput.current.value;
     if (commentInputVal.trim() !== "") {
-      addComment(commentInputVal, userName, "Just now", id);
+      addComment(commentInputVal, "Jhon Doe", "Just now", id);
     }
     commentInput.current.value = "";
   };
