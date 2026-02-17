@@ -5,7 +5,7 @@ import { MyContext } from "../store/Store";
 const CreatePostModal = () => {
   const { setIsCreating, addPost } = useContext(MyContext);
   const [nameEditable, setNameEditable] = useState(false);
-  const [userName, setUserName] = useState("new user");
+  const [userName, setUserName] = useState("John Doe");
   const [postDes, setPostDes] = useState("");
   const [userImg, setUserImg] = useState(
     "https://randomuser.me/api/portraits/men/1.jpg",

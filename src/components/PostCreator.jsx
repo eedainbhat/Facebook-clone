@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { MyContext } from "../store/Store";
 
 const PostCreator = ({ userName, userImg, postTime, id }) => {
-  const { postList, setPostList } = useContext(MyContext);
+  const { deletePost } = useContext(MyContext);
   
   return (
     <div className="flex justify-between">
@@ -18,7 +18,7 @@ const PostCreator = ({ userName, userImg, postTime, id }) => {
           <p className="text-gray-700 text-sm leading-3">{postTime}</p>
         </div>
       </div>
-      <X className="cursor-pointer" onClick={() => setPostList(postList.filter(post => post.id !== id))} />
+      <X className="cursor-pointer" onClick={() => deletePost(id)} />
     </div>
   );
 };

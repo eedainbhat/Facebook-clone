@@ -18,6 +18,7 @@ const MainFeed = () => {
           postDes={post.postDes}
           postImg={post.postImg}
           postLikeCounts={post.postLikeCounts}
+          comments={post.comments}
         />
       )) : <p className="text-gray-500 mt-10 text-lg">No posts to display. Create a new post to see it here!</p>}
     </div>

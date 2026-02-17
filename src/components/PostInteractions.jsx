@@ -2,7 +2,7 @@ import { Forward, MessageCircle, ThumbsUp } from "lucide-react";
 import React, { use, useContext } from "react";
 import { MyContext } from "../store/Store";
 
-const PostInteractions = ({ postLikeCounts, updateLikeCounts, id }) => {
+const PostInteractions = ({ postLikeCounts, setIsCommentBoxOn, isCommentBoxOn, id }) => {
   const { updateLikeCount } = useContext(MyContext);
   return (
     <div className="flex justify-between items-center mt-4">
@@ -19,7 +19,10 @@ const PostInteractions = ({ postLikeCounts, updateLikeCounts, id }) => {
         <ThumbsUp strokeWidth={1.5} size={28} />
         <p className="font-medium">Like</p>
       </div>
-      <div className="text-gray-600 flex items-center justify-center gap-2 cursor-pointer hover:bg-gray-100 rounded-md pt-2 pb-2 grow">
+      <div className="text-gray-600 flex items-center justify-center gap-2 cursor-pointer hover:bg-gray-100 rounded-md pt-2 pb-2 grow" 
+      onClick={()=>{
+        setIsCommentBoxOn(!isCommentBoxOn)
+      }}>
         <MessageCircle strokeWidth={1.5} size={27} />
         <p className="font-medium">Comment</p>
       </div>
