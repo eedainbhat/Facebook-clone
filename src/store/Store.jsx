@@ -1,4 +1,4 @@
-import { createContext, useReducer, useState } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 
 export const MyContext = createContext({
   isCreating: false,
@@ -48,6 +48,14 @@ const postReducer = (currVal, action) => {
 };
 
 export const MyProvider = ({ children }) => {
+  const [isFetching, setIsFetching] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsFetching(false);
+    }, 1500);
+  }, []);
+
   //----------------------------------//
   {
     /*Default posts functionality */
@@ -67,7 +75,7 @@ export const MyProvider = ({ children }) => {
   // Inside MyProvider, before useReducer
 
   const generateDummyPosts = () => {
-    return Array.from({ length: 100 }).map((_, index) => ({
+    return Array.from({ length: 10 }).map((_, index) => ({
       id: Date.now() + index,
       userName:
         randomUserNames[Math.floor(Math.random() * randomUserNames.length)],
@@ -80,10 +88,12 @@ export const MyProvider = ({ children }) => {
       comments: [
         {
           id: Date.now() + 999 + index,
-          user: "Elon Musk",
+          user: randomUserNames[
+            Math.floor(Math.random() * randomUserNames.length)
+          ],
           commentText: "Great post! 🚀",
           time: "2m",
-          avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+          avatar: `https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 100)}.jpg`,
         },
       ],
     }));
@@ -146,6 +156,7 @@ export const MyProvider = ({ children }) => {
         deletePost,
         updateLikeCount,
         addComment,
+        isFetching,
       }}
     >
       {children}

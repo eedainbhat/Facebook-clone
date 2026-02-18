@@ -3,12 +3,14 @@ import Main from "./Main";
 import CreatePost from "./CreatePost";
 import { MyContext } from "../store/Store";
 import { useContext } from "react";
+import InitialLoader from "./InitialLoader";
 
 const App = () => {
   const { isCreating } = useContext(MyContext);
+
   // App.jsx
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen pt-16">
       <NavBar />
       <Main />
       {isCreating && (

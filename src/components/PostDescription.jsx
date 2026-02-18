@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const PostDescription = ({ postDes }) => {
   return (
-    <div>
-        <p className='mt-1'>{postDes}</p>
+    <div className="w-full">
+      <p className="mt-1 wrap-break-word w-full">{postDes}</p>
     </div>
-  )
-}
+  );
+};
 
-export default PostDescription
+export default PostDescription;
