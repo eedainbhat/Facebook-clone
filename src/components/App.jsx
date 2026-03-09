@@ -10,7 +10,7 @@ const App = () => {
 
   // App.jsx
   return (
-    <div className="relative min-h-screen pt-16">
+    <div className="relative h-screen pt-16 overflow-hidden">
       <NavBar />
       <Main />
       {isCreating && (

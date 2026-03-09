@@ -2,6 +2,8 @@ import { createContext, useEffect, useReducer, useState } from "react";
 
 export const MyContext = createContext({
   isCreating: false,
+  followSuggName: "",
+  setFollowSuggName: ()=>{},
   setIsCreating: () => {},
   postList: [],
   addPost: () => {},
@@ -49,11 +51,15 @@ const postReducer = (currVal, action) => {
 
 export const MyProvider = ({ children }) => {
   const [isFetching, setIsFetching] = useState(true);
+  const [followSuggName, setFollowSuggName] = useState("")
 
   useEffect(() => {
-    setTimeout(() => {
+    let loadingTimer = setTimeout(() => {
       setIsFetching(false);
     }, 1500);
+    return () => {
+      clearTimeout(loadingTimer);
+    };
   }, []);
 
   //----------------------------------//
@@ -157,6 +163,8 @@ export const MyProvider = ({ children }) => {
         updateLikeCount,
         addComment,
         isFetching,
+        setFollowSuggName,
+        followSuggName
       }}
     >
       {children}

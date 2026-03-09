@@ -1,9 +1,21 @@
-import { AudioLines, Bookmark, CalendarCheck2, Camera, CircleUser, FileClock, House, Instagram, UserPen, Users, Video } from "lucide-react";
+import {
+  AudioLines,
+  Bookmark,
+  CalendarCheck2,
+  Camera,
+  CircleUser,
+  FileClock,
+  House,
+  Instagram,
+  UserPen,
+  Users,
+  Video,
+} from "lucide-react";
 import SidebarEle from "./SidebarEle";
 
 const Sidebar = () => {
   return (
-    <div className="p-4 w-[20rem] text-[1.1rem] font-medium flex-col">
+    <div className="p-4 w-[20rem] text-[1.1rem] font-medium flex-col h-[90vh] overflow-y-auto">
       <ul>
         <SidebarEle>
           <AudioLines size={30} className="mr-3" /> <p>Meta AI</p>

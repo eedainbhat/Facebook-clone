@@ -6,7 +6,7 @@ import { MyContext } from "../store/Store";
 const MainFeed = () => {
   const { postList } = useContext(MyContext);
   return (
-    <div className="flex items-center flex-col rounded p-4 w-full h-[92vh] overflow-y-auto webkit-scrollbar-hide">
+    <div className="flex items-center flex-col rounded p-4 w-full h-[92vh] overflow-y-auto">
       <MainfeedHead />
       {postList.length > 0 ? postList.map((post) => (
         <MainfeedContent
